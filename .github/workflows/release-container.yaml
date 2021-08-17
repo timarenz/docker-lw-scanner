@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: lw-scanner
+  IMAGE_NAME: timarenz/lw-scanner
   
 jobs:
   release-container:
