@@ -17,6 +17,6 @@ jobs:
           tags: timarenz/lw-scanner:test
 
       - name: Check version
-        uses: timarenz/lw-scanner:test
+        uses: docker://timarenz/lw-scanner:test
         with:
           args: version
