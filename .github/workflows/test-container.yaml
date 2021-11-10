@@ -1,0 +1,22 @@
+name: test-container
+on: [push]
+
+jobs:
+  test-container:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          load: true
+          tags: timarenz/lw-scanner:test
+
+      - name: Check version
+        uses: timarenz/lw-scanner:test
+        with:
+          args: version
