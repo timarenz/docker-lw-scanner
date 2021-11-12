@@ -9,4 +9,5 @@ LABEL org.opencontainers.image.source https://github.com/timarenz/lw-scanner-act
 # Required for parsing lw-scanner results in GitHub action https://github.com/timarenz/lw-scanner-action
 RUN apk add --no-cache jq 
 COPY --from=downloader /usr/local/bin/lw-scanner /usr/local/bin/lw-scanner
+RUN echo $(uname -m)
 ENTRYPOINT ["/usr/local/bin/lw-scanner"]
