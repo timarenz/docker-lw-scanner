@@ -23,7 +23,7 @@ jobs:
           tags: timarenz/lw-scanner:test-amd64
 
       - name: Check version (amd64)
-        run: docker run timarenz/lw-scanner:test-amd64 version
+        run: docker run --platform linux/amd64 timarenz/lw-scanner:test-amd64 version
 
       - name: Build Docker image (arm64)
         uses: docker/build-push-action@v2
@@ -35,4 +35,4 @@ jobs:
           tags: timarenz/lw-scanner:test-arm64
 
       - name: Check version (arm64)
-        run: docker run timarenz/lw-scanner:test-arm64 version
+        run: docker run --platform linux/arm64 timarenz/lw-scanner:test-arm64 version
