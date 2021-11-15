@@ -1,4 +1,4 @@
-name: release-container
+name: release
 on:
   push:
     tags:
@@ -9,10 +9,11 @@ env:
   IMAGE_NAME: timarenz/lw-scanner
 
 jobs:
-  test-container:
-    uses: timarenz/docker-lw-scanner/.github/workflows/test-container.yaml@main
+  test:
+    uses: timarenz/docker-lw-scanner/.github/workflows/test.yaml@main
 
-  release-container:
+  release:
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: read
